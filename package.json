@@ -1,0 +1,30 @@
+{
+  "name": "webappsivproject",
+  "version": "1.0.0",
+  "description": "project voor WebAppsIV",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitalVercleyen/WebAppsIVProject.git"
+  },
+  "author": "Vital Vercleyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitalVercleyen/WebAppsIVProject/issues"
+  },
+  "homepage": "https://github.com/VitalVercleyen/WebAppsIVProject#readme"
+}
