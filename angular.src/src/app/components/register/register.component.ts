@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
 
     // Required Fields
     if (!this.validateService.validateRegister(user)) {
-      this.flashMessage.show("Gelieve all veldin in te vullen", {
+      this.flashMessage.show("Gelieve alle velden in te vullen", {
         cssClass: "alert-danger",
         timeout: 3000
       });
@@ -55,13 +55,13 @@ export class RegisterComponent implements OnInit {
       if (data.success) {
         this.flashMessage.show("Je bent geregistreerd", {
           cssClass: "alert-success",
-          timeout: 3000
+          timeout: 70000
         });
         this.router.navigate(["/login"]);
       } else {
         this.flashMessage.show("Er is iets fout gelopen", {
           cssClass: "alert-danger",
-          timeout: 3000
+          timeout: 70000
         });
         this.router.navigate(["/register"]);
       }
