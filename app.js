@@ -22,7 +22,7 @@ const app = express();
 const users = require("./routes/users");
 
 // Poort Nummer
-const port = 4200;
+const port = 3000;
 
 // Cors Middleware
 app.use(cors());
