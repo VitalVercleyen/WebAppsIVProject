@@ -1,2 +1,86 @@
-<h2 class="page-header">Dashboard</h2>
-<p>Welcome to your Dashboard</p>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+    <h2 class="page-header">Een Spelletje Toevoegen</h2>
+    <hr>
+    <form (submit)="onSaveSubmit()">
+        <table>
+            <tr>
+
+                <td>
+                    <label>Naam</label>
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="name" name="name" class="form control">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label>Tijd (in minuten)</label>
+                </td>
+                <td>
+                    <input type="number" [(ngModel)]="duration" name="duration" class="num" class="form control">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Minimum leeftijd</label>
+                </td>
+                <td>
+                    <input type="number" [(ngModel)]="minAge" name="minAge" class="num" class="form control">
+                </td>
+                <td>
+                    <label>Maximum leeftijd</label>
+                </td>
+                <td>
+
+                    <input type="number" [(ngModel)]="maxAge" name="maxAge" class="num" class="form control">
+                </td>
+                <tr>
+                    <td>
+                        <label>Aantal spelers</label>
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)]="players" name="players" class="num" class="form control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Plaats</label>
+                    </td>
+                    <td>
+                        <select name="place" class="form control" [(ngModel)]="place" name="place">
+                            <option value="" disabled selected>Selecteer je keuze</option>
+                            <option value="Binnen - kleine ruimte">Binnen - kleine zaal</option>
+                            <option value="Binnen - grote ruimte">Binnen - grote zaal</option>
+                            <option value="Buiten - strand">Buiten - strand</option>
+                            <option value="Buiten - bos">Buiten - bos</option>
+                            <option value="Buiten - grasveld">Buiten - grasveld</option>
+                            <option value="Buiten - stad">Buiten - stad</option>
+                            <option value="Buiten - zand">Buiten - zand</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Beschrijving</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input align="top" type="text" [(ngModel)]="description" name="description" class="desc">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Opslaan">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</div>

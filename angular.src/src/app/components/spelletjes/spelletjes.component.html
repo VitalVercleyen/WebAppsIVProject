@@ -1,3 +1,87 @@
-<p>
-  spelletjes works!
-</p>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="section-title">
+        <h2>Spelletjes</h2>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <br>
+  <section id="spelletjes" class="spelletjes-section section-space-padding">
+    <div class="container">
+      <div class="col-md-12 col-sm-6" style="margin:auto;">
+        <div class="zoek-detail">
+          <h4>Zoek een spelletje op naam</h4>
+          <hr>
+
+          <form class="form-inline my- my-lg-0">
+
+            <input class="form-control mr-sm-2" type="text" placeholder="Zoek naar spelletjes...">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoek</button>
+          </form>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+
+        <div class="col-md-4 col-sm-6">
+          <a [routerLink]="['/dashboard']">
+            <div class="spelletjes-detail">
+              <h3>Zoek op eigenschap</h3>
+              <hr>
+              <p>Jij duid enkele eigenschappen aan en wij zoek het perfecte spel voor jou</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <a [routerLink]="['/spelletjesLijst']">
+            <div class="spelletjes-detail">
+              <h3>Alle spelletjes</h3>
+              <hr>
+              <p>Bekijk de volledige lijst van alle spelletes aanwezig op de databank</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <a [routerLink]="['/dashboard']">
+            <div class="spelletjes-detail">
+              <h3>Willekeurig spelletje</h3>
+              <hr>
+              <p>Wij kiezen voor jou een willekeurig spelletje uit</p>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-10 col-sm-6" style="margin:auto;">
+          <div class="zoek-detail">
+            <h4>Voeg zelf een spelletje toe</h4>
+            <hr>
+
+
+
+
+            <a class="btn btn-primary" [routerLink]="['/dashboard']">Spelletje Toevoegen</a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<br>
+
+<br>
+<br>
+<br>

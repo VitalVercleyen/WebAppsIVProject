@@ -17,6 +17,9 @@ import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
 import { FlashMessagesModule } from "angular2-flash-messages";
 import { AuthGuard } from "./guards/auth.guard";
+import { FooterComponent } from "./components/footer/footer.component";
+import { SpelletjesLijstComponent } from "./components/spelletjes-lijst/spelletjes-lijst.component";
+import { SpelletjeComponent } from './components/spelletje/spelletje.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -31,6 +34,10 @@ const appRoutes: Routes = [
   {
     path: "spelletjes",
     component: SpelletjesComponent
+  },
+  {
+    path: "spelletjesLijst",
+    component: SpelletjesLijstComponent
   }
 ];
 
@@ -43,7 +50,10 @@ const appRoutes: Routes = [
     RegisterComponent,
     DashboardComponent,
     ProfileComponent,
-    SpelletjesComponent
+    SpelletjesComponent,
+    FooterComponent,
+    SpelletjesLijstComponent,
+    SpelletjeComponent
   ],
   imports: [
     BrowserModule,

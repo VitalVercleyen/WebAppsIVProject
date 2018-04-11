@@ -18,6 +18,16 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  saveSpelletje(spelletje) {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .post("http://localhost:3000/spelletjes/save", spelletje, {
+        headers: headers
+      })
+      .map(res => res.json());
+  }
+
   authenticateUser(user) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -35,6 +45,17 @@ export class AuthService {
     headers.append("Content-Type", "application/json");
     return this.http
       .get("http://localhost:3000/users/profile", {
+        headers: headers
+      })
+      .map(res => res.json());
+  }
+
+  getSpelletjes() {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    return this.http
+      .get("http://localhost:3000/spelletjes/getSpelletjes", {
         headers: headers
       })
       .map(res => res.json());

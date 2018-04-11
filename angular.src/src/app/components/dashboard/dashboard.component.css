@@ -1,0 +1,34 @@
+.container {
+  margin-bottom: 490px;
+}
+
+label {
+  margin-right: 40px;
+}
+
+tr {
+  padding: 20px;
+}
+td {
+  padding: 10px;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+select {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 175px;
+}
+.desc {
+  width: 600%;
+  height: 400px;
+  padding-bottom: 360px;
+}
+.btn {
+  font-size: 20px;
+  width: 150%;
+  height: 60px;
+}

@@ -1,27 +1,34 @@
-<h2 class="page-header">Registreer</h2>
 <br>
-<form (submit)="onRegisterSubmit()">
-  <div class="form-group">
-    <label>Naam</label>
-    <input type="text" [(ngModel)]="name" name="name" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>GebruikersNaam</label>
-    <input type="text" [(ngModel)]="username" name="username" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" [(ngModel)]="email" name="email" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>Wachtwoord</label>
-    <input type="password" [(ngModel)]="password" name="password" class="form-control">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Submit">
-  <div style="float:right">
-    Heb je al een account?
-    <a class="btn btn-info" [routerLink]="['/login']">Login</a>
-  </div>
+<br>
+<br>
+<br>
+<div class="container">
+  <h2 class="page-header">Registreer</h2>
+  <hr>
+  <br>
+  <form (submit)="onRegisterSubmit()">
+    <div class="form-group">
+      <label>Naam</label>
+      <input type="text" [(ngModel)]="name" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>GebruikersNaam</label>
+      <input type="text" [(ngModel)]="username" name="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Wachtwoord</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Registreer">
+    <div style="float:right">
+      Heb je al een account?
+      <a class="btn btn-info" [routerLink]="['/login']">Login</a>
+    </div>
 
 
-</form>
+  </form>
+</div>

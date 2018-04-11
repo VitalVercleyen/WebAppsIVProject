@@ -20,6 +20,7 @@ mongoose.connection.on("error", err => {
 const app = express();
 
 const users = require("./routes/users");
+const spelletjes = require("./routes/spelletjes");
 
 // Poort Nummer
 const port = 3000;
@@ -40,6 +41,7 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 app.use("/users", users);
+app.use("/spelletjes", spelletjes);
 
 // Index
 app.get("/", (req, res) => {
