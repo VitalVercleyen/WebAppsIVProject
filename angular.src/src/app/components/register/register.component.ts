@@ -22,7 +22,9 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0, 0);
+  }
 
   onRegisterSubmit() {
     const user = {

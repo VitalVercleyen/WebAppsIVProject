@@ -27,6 +27,8 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     this.authService.getProfile().subscribe(
       profile => {
         this.creator = profile.user.username;
@@ -39,6 +41,8 @@ export class DashboardComponent implements OnInit {
   }
 
   onSaveSubmit() {
+    window.scroll(0, 0);
+
     const spelletje = {
       creator: this.creator,
       name: this.name,

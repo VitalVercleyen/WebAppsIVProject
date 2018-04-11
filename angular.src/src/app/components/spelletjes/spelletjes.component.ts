@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-spelletjes',
-  templateUrl: './spelletjes.component.html',
-  styleUrls: ['./spelletjes.component.css']
+  selector: "app-spelletjes",
+  templateUrl: "./spelletjes.component.html",
+  styleUrls: ["./spelletjes.component.css"]
 })
 export class SpelletjesComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    window.scroll(0, 0);
   }
-
 }

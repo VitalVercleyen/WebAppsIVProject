@@ -13,6 +13,8 @@ export class SpelletjesLijstComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     this.authService.getSpelletjes().subscribe(
       spelletjesRes => {
         this.spelletjes = spelletjesRes;
