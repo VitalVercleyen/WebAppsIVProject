@@ -6,6 +6,7 @@
 
   </button>
 
+
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto navbar-left">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
@@ -33,8 +34,8 @@
       </li>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Zoek naar spelletjes...">
+    <form class="form-inline my-2 my-lg-0" (submit)="zoek()">
+      <input class="form-control mr-sm-2" type="text" placeholder="Zoek naar spelletjes..." [(ngModel)]="searchParam" name="searchParam">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoek</button>
     </form>
   </div>

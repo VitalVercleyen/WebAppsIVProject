@@ -19,7 +19,9 @@ import { FlashMessagesModule } from "angular2-flash-messages";
 import { AuthGuard } from "./guards/auth.guard";
 import { FooterComponent } from "./components/footer/footer.component";
 import { SpelletjesLijstComponent } from "./components/spelletjes-lijst/spelletjes-lijst.component";
-import { SpelletjeComponent } from './components/spelletje/spelletje.component';
+import { SpelletjeComponent } from "./components/spelletje/spelletje.component";
+import { SpelletjeDetailComponent } from "./components/spelletje-detail/spelletje-detail.component";
+import { SpelletjesSearchResultComponent } from "./components/spelletjes-search-result/spelletjes-search-result.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -38,6 +40,14 @@ const appRoutes: Routes = [
   {
     path: "spelletjesLijst",
     component: SpelletjesLijstComponent
+  },
+  {
+    path: "spelletjesDetail",
+    component: SpelletjeDetailComponent
+  },
+  {
+    path: "spelletjesSearchResult",
+    component: SpelletjesSearchResultComponent
   }
 ];
 
@@ -53,7 +63,9 @@ const appRoutes: Routes = [
     SpelletjesComponent,
     FooterComponent,
     SpelletjesLijstComponent,
-    SpelletjeComponent
+    SpelletjeComponent,
+    SpelletjeDetailComponent,
+    SpelletjesSearchResultComponent
   ],
   imports: [
     BrowserModule,

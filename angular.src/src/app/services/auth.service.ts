@@ -7,6 +7,8 @@ import { tokenNotExpired } from "angular2-jwt";
 export class AuthService {
   authToken: any;
   user: any;
+  nameSpelletje: any;
+  searchParam: any;
 
   constructor(private http: Http) {}
 
@@ -61,6 +63,35 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  getSelectedSpelletje() {
+    let headers = new Headers();
+    this.loadSelectedSpelletje();
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .get(
+        "http://localhost:3000/spelletjes/getSpelletjeOnName/" +
+          this.nameSpelletje,
+        {
+          headers: headers
+        }
+      )
+      .map(res => res.json());
+  }
+
+  getSpelletjeLike() {
+    let headers = new Headers();
+    this.loadSearchParam();
+    headers.append("Content-type", "application/json");
+    return this.http
+      .get(
+        "http://localhost:3000/spelletjes/getSpelletjeLike/" + this.searchParam,
+        {
+          headers: headers
+        }
+      )
+      .map(res => res.json());
+  }
+
   storeUserData(token, user) {
     localStorage.setItem("id_token", token);
     localStorage.setItem("user", JSON.stringify(user));
@@ -81,5 +112,28 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  storeSelectedSpelletje(name) {
+    localStorage.setItem("selectedSpelletje", name);
+    this.nameSpelletje = name;
+  }
+
+  loadSelectedSpelletje() {
+    const spelletjeName = localStorage.getItem("selectedSpelletje");
+    this.nameSpelletje = spelletjeName;
+  }
+
+  storeSearchParam(param) {
+    localStorage.setItem("searchParam", param);
+    this.searchParam = param;
+  }
+  loadSearchParam() {
+    const searchParam = localStorage.getItem("searchParam");
+    this.searchParam = searchParam;
+  }
+
+  getSearchParam() {
+    return this.searchParam;
   }
 }

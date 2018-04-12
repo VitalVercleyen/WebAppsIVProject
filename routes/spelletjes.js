@@ -6,12 +6,12 @@ const Spelletje = require("../models/spelletje");
 // Save
 router.post("/save", (req, res, next) => {
   let newSpelletje = new Spelletje({
-    creator: req.body.creator,
-    name: req.body.name,
+    creator: req.body.creator.toLowerCase(),
+    name: req.body.name.toLowerCase(),
     description: req.body.description,
     minimumAge: req.body.minimumAge,
     maximumAge: req.body.maximumAge,
-    place: req.body.place,
+    place: req.body.place.toLowerCase(),
     Duration: req.body.Duration,
     Players: req.body.Players
   });
@@ -28,6 +28,20 @@ router.post("/save", (req, res, next) => {
 // Profile
 router.get("/getSpelletjes", (req, res, next) => {
   Spelletje.getAllSpelletjes((err, spelletjes) => {
+    if (err) throw err;
+    res.json(spelletjes);
+  });
+});
+
+router.get("/getSpelletjeOnName/:name", (req, res, next) => {
+  Spelletje.getSpelletjeByName(req.params.name, (err, spelletje) => {
+    if (err) throw err;
+    res.json(spelletje);
+  });
+});
+
+router.get("/getSpelletjeLike/:param", (req, res, next) => {
+  Spelletje.getSpelletjesLike(req.params.param, (err, spelletjes) => {
     if (err) throw err;
     res.json(spelletjes);
   });

@@ -1,8 +1,13 @@
 <div class="container">
-  <h3>gemaakt door {{creator}}</h3>
-  <p>
-    {{name}}
-  </p>
-  <div id="#descr">{{description}}</div>
+  <h3 class="capitalize">{{name}}</h3>
+  <ul>
+    <li>{{minimumAge}} tot {{maximumAge}} jaar</li>
+    <li>{{Players}} spelers</li>
+    <li>{{Duration}} minuten</li>
+  </ul>
+  <br>
+  <div id="descr" class="capitalize">{{description}} </div>
+  <a (click)="onClick()">meer...</a>
+
 </div>
 <hr>

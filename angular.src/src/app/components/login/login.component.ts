@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
     private flashMessage: FlashMessagesService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0, 0);
+  }
 
   onLoginSubmit() {
     const user = {

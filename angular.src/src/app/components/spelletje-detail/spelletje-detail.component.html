@@ -1,0 +1,29 @@
+<br>
+<br>
+
+<br>
+
+<br>
+
+<div class="container">
+  <h2 class="capitalize"> {{spelletje.name}}</h2>
+  <hr>
+  <div id="info">
+    <h4>gemaakt door
+      <span class="capitalize">{{spelletje.creator}}</span>
+    </h4>
+    <br>
+    <ul>
+      <li>{{spelletje.minimumAge}} tot {{spelletje.maximumAge}} jaar</li>
+      <li>{{spelletje.Players}} spelers</li>
+      <li>{{spelletje.place}}</li>
+      <li>{{spelletje.Duration}} minuten</li>
+    </ul>
+    <hr class="shortHr">
+    <div id="descr">
+      <h4>Beschrijving</h4>
+      <br class="capitalize"> {{spelletje.description}}
+    </div>
+    <hr class="shortHr">
+  </div>
+</div>

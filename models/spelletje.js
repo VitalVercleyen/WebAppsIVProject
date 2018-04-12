@@ -44,7 +44,7 @@ const Spelletje = (module.exports = mongoose.model(
 ));
 
 module.exports.getSpelletjeByName = function(name, callback) {
-  Spelletje.findByName(name, callback);
+  Spelletje.find({ name: name }, callback);
 };
 
 module.exports.addSpelletje = function(newSpelletje, callback) {
@@ -53,4 +53,8 @@ module.exports.addSpelletje = function(newSpelletje, callback) {
 
 module.exports.getAllSpelletjes = function(callback) {
   Spelletje.find(callback);
+};
+
+module.exports.getSpelletjesLike = function(param, callback) {
+  Spelletje.find({ name: { $regex: ".*" + param + ".*" } }, callback);
 };

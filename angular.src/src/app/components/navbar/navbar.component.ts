@@ -9,6 +9,7 @@ import { FlashMessagesService } from "angular2-flash-messages";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
+  searchParam: String;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -25,5 +26,10 @@ export class NavbarComponent implements OnInit {
     });
     this.router.navigate(["/login"]);
     return false;
+  }
+
+  zoek() {
+    this.authService.storeSearchParam(this.searchParam);
+    this.router.navigate(["/spelletjesSearchResult"]);
   }
 }

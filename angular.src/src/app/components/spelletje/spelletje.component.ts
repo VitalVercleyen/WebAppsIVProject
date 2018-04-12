@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-spelletje",
@@ -15,7 +17,13 @@ export class SpelletjeComponent implements OnInit {
   @Input() Duration: Number;
   @Input() Players: Number;
 
-  constructor() {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
+
+  onClick() {
+    this.authService.storeSelectedSpelletje(this.name);
+
+    this.router.navigate(["/spelletjesDetail"]);
+  }
 }

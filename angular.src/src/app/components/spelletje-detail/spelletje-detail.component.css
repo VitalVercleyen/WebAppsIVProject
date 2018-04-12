@@ -1,0 +1,16 @@
+#info {
+  padding: 20px;
+}
+#descr {
+  width: 80%;
+  padding: 20px;
+}
+
+.shortHr {
+  width: 80%;
+  margin-left: 5px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
