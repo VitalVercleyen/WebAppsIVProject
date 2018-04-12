@@ -1,0 +1,12 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <h2>Jouw willekeurig Spelletje</h2>
+  <hr>
+  <br>
+  <app-spelletje *ngFor="let spelletje of spelletje" [name]=spelletje.name [creator]=spelletje.creator [description]=spelletje.description
+    [minimumAge]=spelletje.minimumAge [maximumAge]=spelletje.maximumAge [place]=spelletje.place [Duration]=spelletje.Duration
+    [Players]=spelletje.Players> </app-spelletje>
+</div>

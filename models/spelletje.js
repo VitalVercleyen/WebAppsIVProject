@@ -58,3 +58,11 @@ module.exports.getAllSpelletjes = function(callback) {
 module.exports.getSpelletjesLike = function(param, callback) {
   Spelletje.find({ name: { $regex: ".*" + param + ".*" } }, callback);
 };
+
+module.exports.getRandomSpelletje = function(callback) {
+  Spelletje.aggregate([{ $sample: { size: 1 } }], callback);
+};
+module.exports.getSpelletjeOnUsername = function(param, callback) {
+  console.log(param);
+  Spelletje.find({ creator: param }, callback);
+};

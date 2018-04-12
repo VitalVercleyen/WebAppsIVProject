@@ -20,7 +20,6 @@ export class SpelletjesSearchResultComponent implements OnInit {
     this.authService.getSpelletjeLike().subscribe(
       spelletjeRes => {
         this.spelletjes = spelletjeRes;
-        console.log(spelletjeRes);
       },
       err => {
         console.log(err);

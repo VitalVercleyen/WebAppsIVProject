@@ -1,8 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
+import { AuthService } from "../services/auth.service";
 
 @Injectable()
 export class ValidateService {
-  constructor() {}
+  users: [String];
+
+  constructor(private authService: AuthService) {}
 
   validateRegister(user) {
     if (
@@ -33,6 +36,26 @@ export class ValidateService {
       spelletje.Players == undefined ||
       spelletje.creator == undefined
     ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  loadUsers() {
+    this.authService.getAllUserNames().subscribe(
+      usersRes => {
+        this.users = usersRes;
+        console.log(usersRes);
+      },
+      err => {
+        console.log(err);
+        return false;
+      }
+    );
+  }
+  validateUniqueUsername(username) {
+    if (this.users.indexOf(username) > -1) {
       return false;
     } else {
       return true;

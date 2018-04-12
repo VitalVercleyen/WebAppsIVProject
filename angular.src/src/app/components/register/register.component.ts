@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
+    this.validateService.loadUsers();
   }
 
   onRegisterSubmit() {
@@ -37,6 +38,14 @@ export class RegisterComponent implements OnInit {
     // Required Fields
     if (!this.validateService.validateRegister(user)) {
       this.flashMessage.show("Gelieve alle velden in te vullen", {
+        cssClass: "alert-danger",
+        timeout: 3000
+      });
+      return false;
+    }
+
+    if (!this.validateService.validateUniqueUsername(user.username)) {
+      this.flashMessage.show("Username already exists", {
         cssClass: "alert-danger",
         timeout: 3000
       });

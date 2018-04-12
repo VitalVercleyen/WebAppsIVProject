@@ -46,5 +46,18 @@ router.get("/getSpelletjeLike/:param", (req, res, next) => {
     res.json(spelletjes);
   });
 });
+router.get("/getRandomSpelletje", (req, res, next) => {
+  Spelletje.getRandomSpelletje((err, spelletjes) => {
+    if (err) throw err;
+    res.json(spelletjes);
+  });
+});
+
+router.get("/getSpelletjeOnUsername/:param", (req, res, next) => {
+  Spelletje.getSpelletjeOnUsername(req.params.param, (err, spelletjes) => {
+    if (err) throw err;
+    res.json(spelletjes);
+  });
+});
 
 module.exports = router;

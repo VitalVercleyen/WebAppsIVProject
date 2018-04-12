@@ -67,4 +67,12 @@ router.get(
   }
 );
 
+router.get("/getAllUserNames", (req, res, next) => {
+  User.getAllUsers((err, users) => {
+    if (err) throw err;
+    let result = users.map(a => a.username);
+    res.json(result);
+  });
+});
+
 module.exports = router;

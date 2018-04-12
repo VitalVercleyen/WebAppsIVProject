@@ -7,6 +7,7 @@ import { tokenNotExpired } from "angular2-jwt";
 export class AuthService {
   authToken: any;
   user: any;
+  username: String;
   nameSpelletje: any;
   searchParam: any;
 
@@ -17,6 +18,16 @@ export class AuthService {
     headers.append("Content-Type", "application/json");
     return this.http
       .post("http://localhost:3000/users/register", user, { headers: headers })
+      .map(res => res.json());
+  }
+
+  getAllUserNames() {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .get("http://localhost:3000/users/getAllUserNames", {
+        headers: headers
+      })
       .map(res => res.json());
   }
 
@@ -63,6 +74,22 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  getUserSpelletjes() {
+    let headers = new Headers();
+    this.loadUser();
+    console.log(this.username);
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .get(
+        "http://localhost:3000/spelletjes/getSpelletjeOnUsername/" +
+          this.username.toLowerCase(),
+        {
+          headers: headers
+        }
+      )
+      .map(res => res.json());
+  }
+
   getSelectedSpelletje() {
     let headers = new Headers();
     this.loadSelectedSpelletje();
@@ -91,17 +118,35 @@ export class AuthService {
       )
       .map(res => res.json());
   }
+  getRandomSpelletje() {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .get("http://localhost:3000/spelletjes/getRandomSpelletje", {
+        headers: headers
+      })
+      .map(res => res.json());
+  }
 
   storeUserData(token, user) {
     localStorage.setItem("id_token", token);
     localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("username", user.username);
     this.authToken = token;
     this.user = user;
+    this.username = user.username;
   }
 
   loadToken() {
     const token = localStorage.getItem("id_token");
     this.authToken = token;
+  }
+
+  loadUser() {
+    const user = localStorage.getItem("user");
+    const username = localStorage.getItem("username");
+    this.user = user;
+    this.username = username;
   }
 
   loggedIn() {

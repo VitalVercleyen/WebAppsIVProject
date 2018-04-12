@@ -28,8 +28,8 @@ export class NavbarComponent implements OnInit {
     return false;
   }
 
-  zoek() {
+  /* zoek() {
     this.authService.storeSearchParam(this.searchParam);
     this.router.navigate(["/spelletjesSearchResult"]);
-  }
+  }*/
 }

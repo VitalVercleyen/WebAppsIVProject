@@ -22,6 +22,7 @@ import { SpelletjesLijstComponent } from "./components/spelletjes-lijst/spelletj
 import { SpelletjeComponent } from "./components/spelletje/spelletje.component";
 import { SpelletjeDetailComponent } from "./components/spelletje-detail/spelletje-detail.component";
 import { SpelletjesSearchResultComponent } from "./components/spelletjes-search-result/spelletjes-search-result.component";
+import { WillekeurigSpelletjeComponent } from "./components/willekeurig-spelletje/willekeurig-spelletje.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -48,6 +49,10 @@ const appRoutes: Routes = [
   {
     path: "spelletjesSearchResult",
     component: SpelletjesSearchResultComponent
+  },
+  {
+    path: "willekeurigSpelletje",
+    component: WillekeurigSpelletjeComponent
   }
 ];
 
@@ -65,7 +70,8 @@ const appRoutes: Routes = [
     SpelletjesLijstComponent,
     SpelletjeComponent,
     SpelletjeDetailComponent,
-    SpelletjesSearchResultComponent
+    SpelletjesSearchResultComponent,
+    WillekeurigSpelletjeComponent
   ],
   imports: [
     BrowserModule,

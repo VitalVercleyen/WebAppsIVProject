@@ -5,7 +5,7 @@
 <div class="container">
 
   <div *ngIf="user">
-    <h2 class="page-header">{{user.name}}</h2>
+    <h2 class="page-header" class="capitalize">{{user.name}}</h2>
     <hr>
     <ul class="list-group">
       <li class="list-group-item">Gebruikersnaam : {{user.username}}</li>
@@ -13,5 +13,16 @@
 
     </ul>
 
+  </div>
+  <br>
+  <br>
+
+  <div>
+    <h2>Al jouw spelletjes</h2>
+    <hr>
+    <br>
+    <app-spelletje *ngFor="let spelletje of userSpelletjes" [name]=spelletje.name [creator]=spelletje.creator [description]=spelletje.description
+      [minimumAge]=spelletje.minimumAge [maximumAge]=spelletje.maximumAge [place]=spelletje.place [Duration]=spelletje.Duration
+      [Players]=spelletje.Players> </app-spelletje>
   </div>
 </div>
